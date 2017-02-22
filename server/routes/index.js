@@ -7,7 +7,7 @@ module.exports = function () {
         if(req.originalUrl.indexOf('public') >= 0){ //abit hacky, checks if public is part of url and returns if it is in order to allow the request to access the files in the public dir
             return next();
         }
-        res.sendFile(path.resolve('../webapp/public/index/index.html'));
+        res.sendFile(path.resolve('../web/public/index/index.html'));
     });
 	return router;
 };
