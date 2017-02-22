@@ -2,7 +2,7 @@ var express = require('express')
 var app = express();
 var path = require('path');
 var router = require('./routes');
-
+var serverConfig = require('./config/server.config.js');
 
 app.use('/public', express.static(path.join(__dirname, '../public'))); //Make public folder public accessible
 
