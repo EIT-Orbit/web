@@ -8,6 +8,7 @@ app.use('/public', express.static(path.join(__dirname, '../public'))); //Make pu
 
 app.use('/', router());
 
-app.listen(8000, function () {
-  console.log('Example app listening on port 8000!')
+var server_port = process.env.PORT || serverConfig.PORT;
+app.listen(server_port, function () {
+  console.log('Example app listening on port' + server_port + '!')
 })
