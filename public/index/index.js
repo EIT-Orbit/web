@@ -43,7 +43,7 @@ function save(){
   var data = drawnItems.toGeoJSON();
   $.ajax({
   type: "POST",
-  url: "http://localhost:8080/api/map",
+  url: "https://nameless-brushlands-18983.herokuapp.com/api/map",
   data: data,
   success: function(data){
     var iframe = document.createElement("iframe");
