@@ -4,16 +4,44 @@
     <meta charset="UTF-8">
     <title>Orbit</title>
     <link rel='stylesheet' href='/public/index/index.css'>
+    <link rel='stylesheet' href='/public/index/modal.css'>
     <script src='//code.jquery.com/jquery-1.12.4.min.js'></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.9/leaflet.draw.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.9/leaflet.draw.js"></script>
 </head>
 <body>
   <div id="mapid"></div>
-  <a id="save" onClick="save()">Save</div>
-  <a id="delete" onClick="clearLayers()">Delete</div>
+  <a id="download" onClick="onDownloadClicked()">Download</a>
+  <a id="save" onClick="onSaveClicked()">Save</a>
+  <a id="delete" onClick="onDeleteClicked()">Delete</a>
+  <a id="logout" onClick="onLogoutClicked()">Sign out</a>
+
+  <div id="loginModal" class="modal" onClick="onCloseLoginModalClicked()">
+    <div class="modal-content" onClick="onDoNothing(event)">
+      <span class="modal-close" onClick="onCloseLoginModalClicked()">&times;</span>
+      <div class="flex-centered-row-item-container">
+        <h2>Sign in to continue</h2>
+      </div>
+      <div class="modal-login-form">
+        <div class="flex-centered-row-item-container">
+          <input id="input-username" placeholder="Username"/>
+        </div>
+        <div class="flex-centered-row-item-container">
+          <input id="input-password" type="password" placeholder="Password"/>
+        </div>
+        <div class="flex-centered-row-item-container">
+          <button onclick="onLoginClicked()">Sign in</button>
+        </div>
+      </div>
+    </div>
+
+</div>
+  <script src="public/index/save.js"></script>
+<script src="public/index/map.js"></script>
+  <script src="public/index/modal.js"></script>
+  <script src="public/index/login.js"></script>
   <script src="public/index/index.js"></script>
 </body>
 </html>
