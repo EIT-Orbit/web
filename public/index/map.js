@@ -45,10 +45,13 @@ function initMap(){
         // Do whatever else you need to. (save to db; add to map etc)
         drawnItems.addLayer(layer);
         currentLayer = layer;
-        console.log(drawnItems);
     });
 
     map.on(L.Draw.Event.DRAWSTART, function(e){
         clearLayers();
     });
+}
+
+function clearLayers(){
+    drawnItems.clearLayers();
 }

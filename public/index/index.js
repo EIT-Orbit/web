@@ -1,14 +1,17 @@
 var drawnItems;
-//var apiUrl = "http://localhost:8080/api/";
-var apiUrl = "https://nameless-brushlands-18983.herokuapp.com/api/"
+var apiUrl = "http://localhost:8080/api/";
+//var apiUrl = "https://nameless-brushlands-18983.herokuapp.com/api/"
 
 $(document).ready(function (){
-  if(!isLoggedIn()) showLoginModal();
+  if(!isLoggedIn()){
+    showLoginModal();
+  }
+  updateSignInButton();
   initMap();
 });
 
 function onDeleteClicked(){
-  drawnItems.clearLayers();
+  clearLayers();
 }
 
 function validateFence(data){

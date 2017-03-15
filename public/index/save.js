@@ -4,23 +4,31 @@ function onSaveClicked(){
     return;
   }
   var fence = drawnItems.toGeoJSON();
+  console.log(fence);
   if(!validateFence(fence)){
     alert('Draw a fence before you can save it');
+  }else{
+    var fenceName = prompt("Enter a name for your fence", "");
+    if(fenceName != null){
+      var data = {
+        fenceName: fenceName,
+        features: fence.features
+      }
+      saveFence(data);
+    }
   }
 }
 
-function saveFence(){
-  var data = drawnItems.toGeoJSON();
+function saveFence(fence){
   $.ajax({
     type: "POST",
     url: apiUrl + "fences",
-    data: data,
+    data: fence,
     headers: {
-				'Authorization': document.cookie.access_token
+				'Authorization': getAccessToken()
 		},
     success: function(data){
-      removeIframeIfExists();
-      addIframeWithDownloadLink(data.url);
+      alert('fence saved');
     },
     error: function(){
     }

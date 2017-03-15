@@ -1,5 +1,6 @@
 *{
   font-weight: 100;
+  font-family: 'Helvetica Neue';
 }
 #mapid{
   height: 1200px;
@@ -10,17 +11,6 @@
   position: absolute;
   top:220px;
   left:20px;
-  z-index:100;
-  text-align: center;
-  width:50px;
-  background:white;
-  color:black;
-  padding:6px;
-  border-radius:4px;
-  font-family: 'Helvetica Neue';
-  cursor: pointer;
-  font-size:12px;
-  text-decoration:none;
   flex-grow: 1;
 }
 #save:hover{

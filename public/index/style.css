@@ -1,0 +1,22 @@
+.button{
+  z-index:100;
+  text-align: center;
+  width:50px;
+  background:white;
+  color:black;
+  padding:6px;
+  border-radius:4px;
+  cursor: pointer;
+  font-size:12px;
+  text-decoration:none;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
+
+}
