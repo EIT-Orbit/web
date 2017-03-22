@@ -1,5 +1,7 @@
-function isLoggedIn(){
-  return localStorage.getItem("access_token") !== null;
+var login = {
+  isLoggedIn: function(){
+    return localStorage.getItem("access_token") !== null;
+  }
 }
 
 function onSubmitLogin(){
@@ -27,7 +29,7 @@ function onSubmitLogin(){
       localStorage.setItem("access_token", data.access_token);
       localStorage.setItem("refresh_token", data.refresh_token);
       updateSignInButton();
-      hideModal();
+      loginModal.hide();
     },
     error: function(){
       showModalError("Wrong username or password");
@@ -51,11 +53,11 @@ function hideModalError(){
 }
 
 function onSignInClicked(){
-  if(isLoggedIn()){
+  if(login.isLoggedIn()){
     logout();
     updateSignInButton();
   }else{
-    showLoginModal();
+    loginModal.show();
   }
 }
 
@@ -84,7 +86,7 @@ function onSignUpClicked(){
       showModalMessage("Registration successful, please sign in");
     },
     error: function(){
-      showModalError("Try another username");
+      showModalError("Username taken");
     }
   });
 }
@@ -96,7 +98,7 @@ function logout(){
 
 function updateSignInButton(){
   var button = document.getElementById("logout");
-  if(isLoggedIn()) button.innerHTML = "Sign out";
+  if(login.isLoggedIn()) button.innerHTML = "Sign out";
   else button.innerHTML = "Sign in";
 }
 

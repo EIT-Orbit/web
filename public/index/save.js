@@ -1,10 +1,9 @@
 function onSaveClicked(){
-  if(!isLoggedIn()){
+  if(!login.isLoggedIn()){
     showLoginModal();
     return;
   }
   var fence = drawnItems.toGeoJSON();
-  console.log(fence);
   if(!validateFence(fence)){
     alert('Draw a fence before you can save it');
   }else{
@@ -20,6 +19,7 @@ function onSaveClicked(){
 }
 
 function saveFence(fence){
+  console.log(fence);
   $.ajax({
     type: "POST",
     url: apiUrl + "fences",

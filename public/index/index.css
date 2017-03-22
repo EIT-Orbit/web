@@ -2,12 +2,13 @@
   font-weight: 100;
   font-family: 'Helvetica Neue';
 }
+
 #mapid{
   height: 1200px;
   z-index: 0;
 }
 
-#save, #delete, #download, #logout{
+#save, #delete, #download, #logout, #fences{
   position: absolute;
   top:220px;
   left:20px;
@@ -33,6 +34,11 @@
   color:white;
   border: 1px solid white;
 }
+#fences:hover{
+  background: rgba(168,219,168, 0.7);
+  color:white;
+  border: 1px solid white;
+}
 #download{
   top:250px;
 }
@@ -41,6 +47,10 @@
 }
 #logout{
   top: 310px;
+}
+
+#fences{
+  top: 340px;
 }
 
 #buttons-container{

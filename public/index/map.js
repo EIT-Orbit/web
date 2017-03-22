@@ -44,12 +44,17 @@ function initMap(){
         }
         // Do whatever else you need to. (save to db; add to map etc)
         drawnItems.addLayer(layer);
+        console.log(layer);
         currentLayer = layer;
     });
 
     map.on(L.Draw.Event.DRAWSTART, function(e){
         clearLayers();
     });
+}
+
+function loadFence(fence){
+  clearLayers();
 }
 
 function clearLayers(){

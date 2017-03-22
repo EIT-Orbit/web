@@ -1,0 +1,15 @@
+.fence-button{
+  border-radius: 50px;
+  border-width: 0;
+  background-color: white;
+  color: black;
+  width: 100%
+}
+
+.fence-button:hover{
+  border-radius: 50px;
+  border-width: 0;
+  background-color: black;
+  color: white;
+  width: 100%
+}
