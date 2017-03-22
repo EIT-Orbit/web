@@ -23,7 +23,7 @@
   <a class="button" id="fences" onClick="fences.onFencesClicked()">My fences</a>
 
   <div id="loginModal" class="modal" onClick="loginModal.hide()">
-    <div class="modal-content" onClick="onDoNothing(event)">
+    <div id="loginModalContent" class="modal-content" onClick="onDoNothing(event)">
       <span class="modal-close" onClick="loginModal.hide()">&times;</span>
       <div class="flex-centered-row-item-container">
         <h2 class="modal-text">Sign in to continue</h2>
@@ -55,7 +55,7 @@
         <h2 class="modal-text">Fences</h2>
       </div>
       <div class="flex-centered-row-item-container">
-        <h5 class="modal-text" id="fence-title">Loading fences</h4>
+        <h5 class="modal-text" id="fence-title">Loading fences</h5>
       </div>
       <div id="container-fences">
 

@@ -1,6 +1,6 @@
 function onSaveClicked(){
   if(!login.isLoggedIn()){
-    showLoginModal();
+    loginModal.show();
     return;
   }
   console.log(currentLayer);
