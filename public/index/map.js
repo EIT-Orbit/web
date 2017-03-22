@@ -53,10 +53,11 @@ function initMap(){
 }
 
 function loadFence(fence){
-  clearLayers();
-  currentLayer = activeLayer = L.geoJson(fence.geoJSON, {});
-  drawnItems.addLayer(currentLayer);
-  fenceModal.hide();
+    clearLayers();
+    console.log(fence);
+    currentLayer = L.geoJson(fence.geoJSON.geometry, {});
+    drawnItems.addLayer(currentLayer);
+    fenceModal.hide();
 }
 
 function clearLayers(){
