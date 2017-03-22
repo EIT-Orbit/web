@@ -3,15 +3,15 @@ function onSaveClicked(){
     showLoginModal();
     return;
   }
-  var fence = drawnItems.toGeoJSON();
-  if(!validateFence(fence)){
+  console.log(currentLayer);
+  if(!currentLayer){
     alert('Draw a fence before you can save it');
   }else{
     var fenceName = prompt("Enter a name for your fence", "");
     if(fenceName != null){
       var data = {
         fenceName: fenceName,
-        features: fence.features
+        geoJSON: currentLayer.toGeoJSON()
       }
       saveFence(data);
     }

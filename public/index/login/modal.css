@@ -1,4 +1,5 @@
 .modal {
+    border-radius: 50;
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     flex-direction: row;
@@ -15,6 +16,8 @@
 
 /* Modal Content/Box */
 .modal-content {
+  border-radius: 50px;
+  border-top-right-radius: 0px;
   display: flex;
   flex-direction: column;
   position: relative;

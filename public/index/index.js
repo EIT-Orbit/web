@@ -1,6 +1,6 @@
 var drawnItems;
-//var apiUrl = "http://localhost:8080/api/";
-var apiUrl = "https://nameless-brushlands-18983.herokuapp.com/api/"
+var apiUrl = "http://localhost:8080/api/";
+//var apiUrl = "https://nameless-brushlands-18983.herokuapp.com/api/"
 
 $(document).ready(function (){
   if(!login.isLoggedIn()){
@@ -14,13 +14,9 @@ function onDeleteClicked(){
   clearLayers();
 }
 
-function validateFence(data){
-  return data.features.length > 0;
-}
-
 function onDownloadClicked(){
   var fence = drawnItems.toGeoJSON();
-  if(!validateFence(fence)) {
+  if(!currentLayer) {
     alert('Draw a fence before you can download');
     return;
   }

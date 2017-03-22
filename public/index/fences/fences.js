@@ -3,13 +3,12 @@ var fences = {
     if(login.isLoggedIn()){
       fenceModal.show();
     }else{
-      showLoginModal(fenceModal.show());
+      loginModal.show();
     }
   },
   getFences: function(){
     $.ajax({
       type: "GET",
-      //url: "https://nameless-brushlands-18983.herokuapp.com/api/map",
       headers: {
   				'Authorization': getAccessToken()
   		},
@@ -32,13 +31,24 @@ var fences = {
 }
 
 function showFences(fences){
-  console.log(fences);
   var container = document.getElementById("container-fences")
   container.innerHTML = "";
-  fences.forEach(function(fence){
-    var button = document.createElement("button");
-    button.className = "fence-button";
-    button.innerHTML = fence.name;
-    container.appendChild(button);
-  });
+  var header = document.getElementById("fence-title");
+
+  if(fences.length === 0){
+    header.innerHTML = "You have no fences";
+  }else{
+      header.innerHTML = "Click a fence to load it";
+    fences.forEach(function(fence){
+      var button = document.createElement("button");
+      button.onclick = function(){
+        console.log(fence);
+        loadFence(fence);
+      }
+      button.className = "fence-button";
+      button.innerHTML = fence.name;
+      container.appendChild(button);
+    });
+  }
+
 }
