@@ -1,6 +1,6 @@
 var drawnItems;
 //var apiUrl = "http://localhost:8080/api/";
-var apiUrl = "http://ec2-34-208-182-48.us-west-2.compute.amazonaws.com:8080/api/"
+var apiUrl = "http://ec2-52-34-38-79.us-west-2.compute.amazonaws.com:8080/api/"
 
 $(document).ready(function (){
   if(!login.isLoggedIn()){
@@ -20,8 +20,6 @@ function onDownloadClicked(){
     alert('Draw a fence before you can download');
     return;
   }
-  console.log(fence);
-  console.log(fence.features[0]);
   //somehow leaflet adds features recursively, remove recursively stored features
   while(fence.features && fence.features[0].features){
     fence = fence.features[0].features[0];
